@@ -451,13 +451,14 @@ def convert(img):
     rimg = np.zeros(tuple(img.shape),np.uint8)
     for i,row in enumerate(img):
         for j,col in enumerate(row):
-            if col.size ==3:
+            if col.size == 3:
                 rimg[i][j][0]=255-col[0]
                 rimg[i][j][1]=255-col[1]
                 rimg[i][j][2]=255-col[2]
             elif col.size == 1:
                 rimg[i][j] = 255 - col
     return rimg
+
 
 def isWhiteLetter(binaryImg,mode=0):
     flag = True
